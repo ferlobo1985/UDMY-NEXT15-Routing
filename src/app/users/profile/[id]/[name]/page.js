@@ -1,9 +1,13 @@
+import { redirect } from "next/navigation";
+
 export default async function UserNamePage({params, searchParams}){
     const id = (await params).id;
     const name = (await params).name;
+    // const query = await searchParams;
 
-    const query = await searchParams;
-    console.log(query)
+    if(id != 100){
+        redirect('/');
+    }
 
     return(
         <>
